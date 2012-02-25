@@ -75,6 +75,9 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
+a { text-decoration: none; color: hsl(210, 50%, 25%); font-weight: bold; }
+
+
 body { position: relative; background-color: #eee; }
 
 body > header { position: relative; padding-top: 10%; padding-bottom: 1ex; text-align: center; font-family: Cochin; line-height: 1; }
@@ -82,10 +85,9 @@ body > header > h1 { font: 120pt Cochin; margin: 0; text-shadow: -2px -2px 1px w
 body > header > h1 .q { position: relative; top: 0.4ex; }
 body > header > h2 { font: 24pt Cochin; margin: 0; position: absolute; bottom: 0px; left: 50%; margin-left: -5em; color: #eee; text-shadow: 1px 1px 1px white, -1px -1px 1px rgba(0,0,0,0.45); letter-spacing: 0.2ex; }
 
-
-body > section { background: hsl(210, 50%, 25%); padding: 20px; margin-top: 5%; box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5); }
-body > section form { text-align: center; }
-
+/* body > section { background: hsl(210, 50%, 25%); padding: 20px; margin-top: 5%; box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5); } */
+body > section form { margin-top: 4em; text-align: center; }
+body > section form div { margin-top: 4em; font: 11pt helvetica; color: #999; text-shadow: 1px 1px 1px white, -1px -1px 1px rgba(0,0,0,0.15); }
 
 body > footer { font: 12pt Cochin; position: fixed; bottom: 10%; left: 50%; width: 300px; margin-left: -150px; text-align: center; padding: 1ex; }
 

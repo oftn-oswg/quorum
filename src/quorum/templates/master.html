@@ -1,4 +1,12 @@
 ## encoding: utf-8
+<%
+
+import random
+
+choices = [u'Enterez', u'Anna', u'Lag', u'Shkruani', u'Idatzi', u'Entra', u'Unesite', u'Vstupte', u'Indtast', u'Entajpu', u'Märkida', u'Ipasok', u'Entre', u'Geben Sie', u'Antre', u'Írja be', u'Sláðu inn', u'Masukkan', u'Cuir isteach', u'Intrare', u'Ievadiet', u'Registruotis', u'Внесете', u'Masuk', u'Ikteb', u'Wejść', u'Intră', u'Унесите', u'Vstúpte', u'Vnesite', u'Kuingia', u'ใส่', u'Girin', u'Nhập', u'Rhowch']
+label = random.choice(choices)
+
+%>
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
@@ -23,14 +31,14 @@
         
         <section>
             <form>
-                <input type="text" name="handle" placeholder="User Name" autofocus>
+                <input type="text" name="handle" placeholder="Identity" autofocus>
                 <input type="password" name="password" placeholder="Password">
-                <button>Entrez!</button>
+                <button class="default" style="width: 120px;">${label}!</button>
+                <div>To participate, sign in using your user name and password or <a href="#">browse public issues</a>.</div>
             </form>
         </section>
         
         <footer>
-            Copyright &copy; 2012 The ΩF:∅ Foundation
         </footer>
         
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
