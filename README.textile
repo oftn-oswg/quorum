@@ -1,0 +1,14 @@
+h1. WebCore Git-Based Deployment Template
+
+This Git repository contains a skeleton application.  It is recommended for you to create a virtual environment using the standard WebCore installation instructions then populate it from this repository:
+
+<pre><code> (core)# git init
+(core)# git remote add origin git@github.com:marrow/WebCore-Template.git
+(core)# git pull origin master
+(core)# rm -rf .git
+(core)# git init
+(core)# git add .gitignore README.textile etc src usr var
+(core)# git commit -m 'Initial commit.'
+</code></pre>
+
+You should place your source code in @src@, source code for third-party libraries in @usr/src@, ensure your configurations point data directories to @var/{cache,locks,sessions}@, store your PID file and any on-disk sockets in @var/run@, log files in @var/log@, symlink your static resources into @usr/share@, and finally application and web server configurations in @etc@.
