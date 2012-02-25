@@ -12,7 +12,12 @@ setup(
         author_email = "alice@gothcandy.com",
         url = "http://oftn.org/",
         
-        install_requires = ['WebCore < 2.0'],
+        install_requires = [
+                'WebCore < 2.0', # Web framework.
+                'Beaker', # Sessions and caching.
+                'MongoEngine', # Object Document Mapper database adapter.
+                'Mako' # Template engine.
+            ],
         packages = find_packages(),
         
         zip_safe = False,
