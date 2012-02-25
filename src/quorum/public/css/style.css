@@ -75,7 +75,185 @@ td { vertical-align: top; }
    ========================================================================== */
 
 
+body { position: relative; background-color: #eee; }
 
+body > header { position: relative; padding-top: 10%; padding-bottom: 1ex; text-align: center; font-family: Cochin; line-height: 1; }
+body > header > h1 { font: 120pt Cochin; margin: 0; text-shadow: -2px -2px 1px white, 2px 2px 1px rgba(0,0,0,0.15); letter-spacing: 0.2ex; position: relative; }
+body > header > h1 .q { position: relative; top: 0.4ex; }
+body > header > h2 { font: 24pt Cochin; margin: 0; position: absolute; bottom: 0px; left: 50%; margin-left: -5em; color: #eee; text-shadow: 1px 1px 1px white, -1px -1px 1px rgba(0,0,0,0.45); letter-spacing: 0.2ex; }
+
+
+body > section { background: hsl(210, 50%, 25%); padding: 20px; margin-top: 5%; box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5); }
+body > section form { text-align: center; }
+
+
+body > footer { font: 12pt Cochin; position: fixed; bottom: 10%; left: 50%; width: 300px; margin-left: -150px; text-align: center; padding: 1ex; }
+
+
+
+
+/* Button Common */
+button, button label { display: inline-block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; }
+button label { display: inline-block; }
+button.icon label { padding-left: 22px; background: transparent url(icn/help.svg) center left no-repeat; background-size: 16px; }
+
+/* Button Clean */
+button {
+    background: #e3e3e3;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    box-shadow: inset 0 0 1px 1px #f6f6f6;
+    color: #333;
+    line-height: 1;
+    padding: 5px 8px 6px;
+    text-align: center;
+    text-shadow: 0 1px 0 #fff;
+}
+
+button.pill {
+    -webkit-border-radius: 1.1em;
+    -moz-border-radius: 1.1em;
+    -ms-border-radius: 1.1em;
+    -o-border-radius: 1.1em;
+    border-radius: 1.1em;
+}
+
+button:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -ms-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -o-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+}
+
+button:active, button:focus {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -ms-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -o-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000;
+}
+
+button.default {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    box-shadow: inset 0 0 1px 1px #f6f6f6;
+    color: #111;
+}
+
+button.default label {
+    font-weight: bold;
+}
+
+button.default:hover {
+    background: #d9d9d9;
+    -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -ms-box-shadow: inset 0 0 1px 1px #eaeaea;
+    -o-box-shadow: inset 0 0 1px 1px #eaeaea;
+    box-shadow: inset 0 0 1px 1px #eaeaea;
+    color: #222;
+}
+
+button.default:active, button.default:focus {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -ms-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -o-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    color: #000;
+}
+
+button:disabled, button:disabled:hover, button:disabled:active, button:disabled:focus {
+    background: #e3e3e3;
+    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    box-shadow: inset 0 0 1px 1px #f6f6f6;
+    color: #777;
+}
+
+button.selected {
+    background: #444;
+    -webkit-box-shadow: inset 0 0 1px 1px #111;
+    -moz-box-shadow: inset 0 0 1px 1px #111;
+    -ms-box-shadow: inset 0 0 1px 1px #111;
+    -o-box-shadow: inset 0 0 1px 1px #111;
+    box-shadow: inset 0 0 1px 1px #111;
+    color: #ddd;
+    border-color: #999;
+    text-shadow: 0 1px 0 #000;
+}
+
+button.selected:hover {
+    background: #222;
+    color: #fff;
+}
+
+button.selected:active, button.selected:focus {
+    background: #d0d0d0;
+    -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -ms-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    -o-box-shadow: inset 0 0 1px 1px #e3e3e3;
+    box-shadow: inset 0 0 1px 1px #e3e3e3;
+    text-shadow: 0 1px 0 #fff;
+    color: #000;
+}
+
+button.selected:disabled {
+    background: #444;
+    -webkit-box-shadow: inset 0 0 1px 1px #111;
+    -moz-box-shadow: inset 0 0 1px 1px #111;
+    -ms-box-shadow: inset 0 0 1px 1px #111;
+    -o-box-shadow: inset 0 0 1px 1px #111;
+    box-shadow: inset 0 0 1px 1px #111;
+    color: #999;
+    border-color: #999;
+    text-shadow: 0 1px 0 #000;
+}
+
+::-webkit-input-placeholder { color: #aaa; font-style: italic; text-shadow: 0 1px 0 #fff; }
+input:-moz-placeholder { color: #aaa; font-style: italic; text-shadow: 0 1px 0 #fff; }
+
+input, textarea {
+    background: #f0f0f0;
+    border: 1px solid #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -ms-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    -o-box-shadow: inset 0 0 1px 1px #f6f6f6;
+    box-shadow: inset 0 0 1px 1px #f6f6f6;
+    color: #333;
+    line-height: 1;
+    padding: 4px 4px;
+    text-shadow: 0 1px 0 #fff;
+    width: 200px;
+}
+
+input[type="password"] { width: 150px; }
 
 
 

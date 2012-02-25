@@ -64,7 +64,7 @@ class User(db.Document):
         return user.id, user
 
 
-class Project(db.document):
+class Project(db.Document):
     meta = dict(
             allow_inheritance = False,
             collection = 'projects',

@@ -15,4 +15,4 @@ class RootController(Controller, AuthenticationMixIn):
         if web.auth.authenticated:
             raise web.core.http.HTTPFound(location='/issues')
         
-        return 'quorum.templates.home', dict()
+        return 'quorum.templates.master', dict()
