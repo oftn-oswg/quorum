@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 class User(db.Document):
     meta = dict(
             allow_inheritance = False,
-            collection = "users",
+            collection = 'users',
             indexes = [('handle', '_password')]
         )
     
@@ -62,3 +62,99 @@ class User(db.Document):
         user.save()
         
         return user.id, user
+
+
+class Project(db.document):
+    meta = dict(
+            allow_inheritance = False,
+            collection = 'projects',
+            indexes = ['name']
+        )
+    
+    id = db.ObjectIdField('_id')
+    
+    name = db.StringField()
+    description = db.StringField()
+    
+    public = db.BooleanField(default=True)
+    abstention = db.BooleanField(default=True)
+    
+    creator = db.ReferenceField(User)
+    created = db.DateTimeField(default=datetime.utcnow)
+    modified = db.DateTimeField()
+
+
+class Issue(db.Document):
+    meta = dict(
+            allow_inheritance = False,
+            collection = 'issues',
+            indexes = ['priority']
+        )
+    
+    id = db.ObjectIdField('_id')
+    
+    project = db.ReferenceField(Project)
+    name = db.StringField()
+    description = db.StringField()
+    priority = db.IntField(default=0, choices=[-1,0,1,2]) # Low, Normal, High, Emergency
+    
+    votes = db.DictField(field=db.BooleanField()) # True = yea, False = nay, None = abstain, missing = not present
+    result = db.BooleanField()
+    
+    creator = db.ReferenceField(User)
+    created = db.DateTimeField(default=datetime.utcnow)
+    modified = db.DateTimeField()
+    closed = db.DateTimeField()
+
+
+class State(db.Document):
+    meta = dict(
+            allow_inheritance = True,
+            collection = 'workflow',
+            indexes = [('category', 'name')]
+        )
+    
+    id = db.ObjectIdField('_id')
+    
+    previous = db.ReferenceField('self')
+    next = db.ReferenceField('self')
+    
+    category = db.StringField()
+    name = db.StringField()
+    description = db.StringField()
+    
+    duration = db.IntField(default=48)
+    timeout = db.StringField(default='pass', choices=['fail', 'pass', 'success', 'test'])
+    mutable = db.BooleanField(default=True)
+    
+    creator = db.ReferenceField(User)
+    created = db.DateTimeField(default=datetime.utcnow)
+    modified = db.DateTimeField()
+
+
+class TabledState(State):
+    pass
+
+
+class VoteState(State):
+    pass
+
+
+def data():
+    start = TabledState(category="Board Vote", name="Proposal", description="Get another board member to second the motion.", duration=24, timeout='fail', mutable=False)
+    discuss = State(category="Board Vote", name="Discussion Period", description="Discuss the motion amongst the board members.", duration=24, timeout='pass', mutable=True)
+    vote = VoteState(category="Board Vote", name="Voting Period", description="Vote on the motion.", duration=48, timeout='test', mutable=True)
+    
+    start.save()
+    
+    discuss.previous = start
+    discuss.save()
+    
+    vote.previous = discuss
+    vote.save()
+    
+    start.next = discuss
+    start.save()
+    
+    discuss.next = vote
+    discuss.save()
