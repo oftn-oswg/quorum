@@ -3,6 +3,7 @@
 *.egg-info
 *.DS_Store
 *~
+.Python
 build/
 dist/
 bin/

@@ -5,12 +5,12 @@ from setuptools import setup, find_packages
 
 
 setup(
-        name = "Project",
+        name = "Quorum",
         version = "0.1",
-        description = "",
-        author = "Your Name Here",
-        author_email = "you@example.com",
-        url = "http://example.com/",
+        description = "A flexible proposal/voting workflow system for teams of people.",
+        author = "Alice Bevan-McGregor and contributors",
+        author_email = "alice@gothcandy.com",
+        url = "http://oftn.org/",
         
         install_requires = ['WebCore < 2.0'],
         packages = find_packages(),
@@ -19,7 +19,7 @@ setup(
         include_package_data = True,
         package_data = {
                 '': ['README.textile', 'LICENSE'],
-                'project': ['templates/*']
+                'quorum': ['templates/*', 'public/*']
             },
         
         paster_plugins = ['PasteScript', 'WebCore'],
