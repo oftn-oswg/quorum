@@ -10,3 +10,5 @@ bin/
 include/
 lib/
 lib64
+var/locks
+var/sessions

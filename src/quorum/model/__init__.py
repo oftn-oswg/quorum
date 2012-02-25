@@ -29,11 +29,11 @@ class User(db.Document):
     disabled = db.DateTimeField()
     
     def __repr__(self):
-        return "User(%s, %s, \"%s\", %s%s)" % (self.id, self.handle, self.name)
+        return "User(%s, %s, \"%s\", %s)" % (self.id, self.handle, self.name, self.email)
     
     @staticmethod
     def hash(value):
-        return hashlib.sha512(web.core.config['quorum.salt'] + value)
+        return hashlib.sha512(web.core.config['quorum.salt'] + value).hexdigest()
     
     @property
     def password(self):
