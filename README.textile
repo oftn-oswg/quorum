@@ -2,4 +2,55 @@ h1. Quorum
 
 bq. A flexible proposal/voting workflow system for teams of people.
 
-Documentation TBD.
+
+h2. What is Quorum?
+
+TBD.
+
+
+h3. Goals
+
+TBD.
+
+
+h2. Installation
+
+TBD.
+
+
+h3. Development Version
+
+Development takes place on "GitHub":github in the "quorum":github-project project.  Issue tracking, documentation, and downloads are provided there.
+
+Installing the current development version requires "Git":git, a distributed source code management system and "virtualenv":virtualenv.  If you do not already have virtualenv, you can install it quite easily:
+
+<pre><code>sudo easy_install virtualenv</code></pre>
+
+Once you have the @virtualenv@ command, create a new virtual environment:
+
+<pre><code>virtualenv --no-site-packages --distribute Quorum
+cd Quorum</code></pre>
+
+Now we can populate the virtual environment with the Quroum source repository and get the package ready to use:
+
+<pre><code>. bin/activate
+git init
+git remote add origin https://github.com/oftn/quorum.git
+git pull origin develop
+(cd src; python setup.py develop)</pre><code>
+
+You can upgrade to the latest version at any time:
+
+<pre><code>(git pull; cd src; python setup.py develop)</code></pre>
+
+You can now run the development application server:
+
+<pre><code>paster serve --reload etc/development.ini</code></pre>
+
+If you would like to make changes and contribute them back to the project, fork the GitHub project, make your changes, and submit a pull request.  This process is beyond the scope of this documentation; for more information, see "GitHub's documentation":github-help.
+
+[github]https://github.com/
+[git]http://git-scm.com/
+[github-help]http://help.github.com/
+[github-project]https://github.com/oftn/quorum/
+[virtualenv]http://pypi.python.org/pypi/virtualenv

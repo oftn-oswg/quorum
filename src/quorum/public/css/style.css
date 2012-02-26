@@ -16,7 +16,7 @@ body { margin: 0; font-size: 1em; line-height: 1.4; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a:hover { color: hsl(210, 50%, 50%); }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -78,7 +78,8 @@ td { vertical-align: top; }
 a { text-decoration: none; color: hsl(210, 50%, 25%); font-weight: bold; }
 
 
-body { position: relative; background-color: #eee; }
+html, body { height: 100%; min-height: 100%; }
+body { position: relative; background-color: #eee; box-shadow: inset 0px -30px 200px 50px rgba(0, 0, 0, 0.25); }
 
 body > header { position: relative; padding-top: 10%; padding-bottom: 1ex; text-align: center; font-family: Cochin; line-height: 1; }
 body > header > h1 { font: 120pt Cochin; margin: 0; text-shadow: -2px -2px 1px white, 2px 2px 1px rgba(0,0,0,0.15); letter-spacing: 0.2ex; position: relative; }
