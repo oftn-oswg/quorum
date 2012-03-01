@@ -37,7 +37,7 @@ Now we can populate the virtual environment with the Quroum source repository an
 git init
 git remote add origin https://github.com/oftn/quorum.git
 git pull origin develop
-(cd src; python setup.py develop)</pre><code>
+(cd src; python setup.py develop)</code></pre>
 
 You can upgrade to the latest version at any time:
 
